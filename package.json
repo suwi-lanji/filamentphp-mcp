@@ -1,13 +1,20 @@
 {
   "name": "filamentphp-mcp",
   "version": "1.0.0",
-  "description": "MCP server for accessing FilamentPHP documentation - enables AI agents to query and retrieve FilamentPHP docs, components, and API references",
+  "description": "MCP server for accessing FilamentPHP v5.x documentation - enables AI agents to search, browse, and read FilamentPHP docs, component references, and code examples",
   "main": "dist/index.js",
   "bin": {
     "filamentphp-mcp": "dist/index.js"
   },
+  "files": [
+    "dist/",
+    "filamentphp-repo/docs/",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "test": "vitest run",
@@ -15,14 +22,31 @@
   },
   "keywords": [
     "mcp",
+    "mcp-server",
     "filamentphp",
+    "filament",
     "laravel",
     "docs",
-    "model-context-protocol"
+    "documentation",
+    "model-context-protocol",
+    "ai",
+    "agent",
+    "admin-panel"
   ],
-  "author": "",
+  "author": "suwi-lanji",
   "license": "MIT",
   "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suwi-lanji/filamentphp-mcp.git"
+  },
+  "homepage": "https://github.com/suwi-lanji/filamentphp-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/suwi-lanji/filamentphp-mcp/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
     "zod": "^3.24.2"
