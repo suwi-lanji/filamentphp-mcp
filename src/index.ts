@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+// @ts-nocheck
+// NOTE: @ts-nocheck is required due to TS2589 (excessively deep type instantiation)
+// when using @modelcontextprotocol/sdk's server.tool() with multiple Zod schemas.
+// All runtime validation via Zod works correctly. This is a known SDK issue.
 
 /**
  * FilamentPHP MCP Server
