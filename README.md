@@ -97,8 +97,8 @@ Add to your OpenCode configuration:
 {
   "mcpServers": {
     "filamentphp": {
-      "command": "npx",
-      "args": ["-y", "filamentphp-mcp"]
+      "type": "local",
+      "command": ["npx","-y", "filamentphp-mcp"]
     }
   }
 }
@@ -235,27 +235,6 @@ filamentphp-mcp/
 └── tsconfig.json
 ```
 
-## CI/CD
-
-This package uses **GitHub Actions** for automated publishing to npm. When you push a new semantic version tag, the pipeline automatically builds, tests, and publishes:
-
-```bash
-# Bump version and create tag
-npm version patch   # or minor / major
-git push origin main --tags
-```
-
-The pipeline runs:
-1. Checkout code
-2. Setup Node.js 20
-3. Install dependencies (`npm ci`)
-4. Build TypeScript (`npm run build`)
-5. Run all tests (`npm test`)
-6. Publish to npm with provenance (`npm publish --provenance --access public`)
-
-You can also trigger a publish manually from the **Actions** tab on GitHub.
-
----
 
 ## Configuration
 
